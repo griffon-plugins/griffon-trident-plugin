@@ -1,0 +1,9 @@
+
+:link_trident: link:https://kenai.com/projects/trident/pages/Home[Trident, window="_blank"]
+:link_groovy_module_extension: link:http://groovy.codehaus.org/Creating+an+extension+module[Groovy Module Extension, window="_blank"]
+
+:subproject-base: {rootdir}/subprojects/griffon-trident-
+:java-source: /src/main/java/
+:test-source: /src/test/java/
+:groovy-source: /src/main/groovy/
+:package-base: org/codehaus/griffon/runtime/

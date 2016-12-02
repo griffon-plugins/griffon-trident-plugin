@@ -1,0 +1,104 @@
+
+[[_modules]]
+= Modules
+:numbered:
+
+The following sections display all bindings per module. Use this information to
+successfully override a binding on your own modules or to troubleshoot a module
+binding if the wrong type has been applied by the Griffon runtime.
+
+== Swing
+
+Module name: `trident-swing-groovy`
+
+Depends on: `swing-groovy`
+
+[source,java,options="nowrap"]
+----
+include::{subproject-base}swing-groovy{groovy-source}{package-base}trident/swing/TridentSwingGroovyModule.java[tags=bindings,indent=0]
+----
+
+=== Nodes
+The following nodes will become available on a Groovy View
+
+[options="2*,header"]
+|===
+| Name                     | Type
+| timeline                 | Timeline
+| timelineCallback         | TimelineCallback
+| uiThreadTimelineCallback | UIThreadTimelineCallback
+| interpolatedProperty     | InterpolatedProperty
+| keyFrames                | KeyFrames
+| keyFrame                 | KeyFrame
+| linearEase               | Ease
+| sineEase                 | Ease
+| splineEase               | SplineEase
+| timelineScenario         | TimelineScenario
+| parallelScenario         | TimelineScenario.Parallel
+| sequenceScenario         | TimelineScenario.Sequence
+| rendevouzScenario        | TimelineScenarioRendezvousSequence
+| timelineScenarioCallback | TimelineScenarioCallback
+| swingRepaintTimeline     | SwingRepaintTimeline
+| timelineRunnable         | TimelineRunnable
+| actionTrigger            | ActionTrigger
+| mouseTrigger             | MouseTrigger
+| focusTrigger             | FocusTrigger
+|===
+
+.focusTrigger
+[options="5*,header"]
+|===
+| Property    | Type              | Required | Bindable | Default
+| autoReverse | boolean           | no       | no       | false
+| event       | FocusTriggerEvent | no       | no       | FocusTriggerEvent.GAINED
+|===
+
+.keyFrame
+[options="5*,header"]
+|===
+| Property | Type         | Required | Bindable | Default
+| offset   | float        | no       | no       | 0f
+| ease     | TimeLineEase | no       | no       | Linear
+| value    | Object       | yes      | no       |
+|===
+
+.keyFrames
+[options="5*,header"]
+|===
+| Property     | Type                 | Required | Bindable | Default
+| interpolator | PropertyInterpolator | yes      | no       |
+|===
+
+.mouseTrigger
+[options="5*,header"]
+|===
+| Property    | Type              | Required | Bindable | Default
+| autoReverse | boolean           | no       | no       | false
+| event       | MouseTriggerEvent | no       | no       | MouseTriggerEvent.CLICK
+|===
+
+.splineEase
+[options="5*,header"]
+|===
+| Property | Type  | Required | Bindable | Default
+| amount   | float | yes      | no       |
+|===
+
+.swingRepaintTimeline
+[options="5*,header"]
+|===
+| Property | Type      | Required | Bindable | Default
+| target   | Component | yes      | no       |
+|===
+
+.timeline
+[options="5*,header"]
+|===
+| Property | Type    | Required | Bindable | Default
+| start    | boolean | yes      | no       |
+| loop     | boolean | yes      | no       |
+| reverse  | boolean | yes      | no       |
+| skip     | long    | no       | no       | 0
+| count    | int     | no       | no       | -1
+|===
+

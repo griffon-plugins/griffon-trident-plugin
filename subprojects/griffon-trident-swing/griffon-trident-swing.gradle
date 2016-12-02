@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+apply from: rootProject.file('gradle/code-coverage.gradle')
+
+dependencies {
+    compile "org.codehaus.griffon:griffon-core:${griffonVersion}"
+    compile "org.codehaus.griffon:griffon-swing:${griffonVersion}"
+    compile "com.github.insubstantial:trident:$tridentVersion"
+
+    testCompile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    testCompile("org.spockframework:spock-core:$spockVersion") {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+    testCompile "cglib:cglib-nodep:$cglibVersion"
+}
+
+compileGroovy.enabled = false
