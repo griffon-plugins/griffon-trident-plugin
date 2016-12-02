@@ -1,0 +1,3 @@
+griffon.builder.trident
+org.codehaus.griffon.runtime.trident.swing
+org.hybird.animation.trident.triggers
